@@ -1,20 +1,25 @@
-import 'dart:collection';
+void main(List<String> args) {
+  print(isAnagrams("aseds", "sead"));
+}
 
-void main(List<String> args) {}
-
-bool? isAnagram(String s1, String s2) {
+bool isAnagrams(String s1, String s2) {
   int l1 = s1.length;
   int l2 = s2.length;
-  s1.toLowerCase();
-  s2.toLowerCase();
+  s1 = s1.toLowerCase();
+  s2 = s2.toLowerCase();
 
-  Map<String, int> charAppearances = new HashMap();
+  var c1 = s1.split("");
+  var c2 = s2.split("");
+  c1.sort();
+  c2.sort();
 
-  for (int i = 0; i < l1; i++) {
-    String c = s1[i];
-
-    charAppearances.addAll({c: 0});    
+  if (l1 != l2) {
+    return false;
   }
-
-  
+  for (var i = 0; i < l1; i++) {
+    if (c1[i] != c2[i]) {
+      return false;
+    }
+  }
+  return true;
 }

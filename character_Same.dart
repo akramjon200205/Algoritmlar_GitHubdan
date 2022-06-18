@@ -18,12 +18,3 @@ void main(List<String> args) {
 
 }
 
-
-// main() {
-//   print("Enter an even number : ");
-//   int evenNo = int.parse(stdin.readLineSync()!);
-
-//   assert(evenNo % 2 == 0, "$evenNo is not even");
-
-//   print("You have entered : $evenNo");
-// }
